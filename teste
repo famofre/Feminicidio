@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denúncia Feminicídio - Disque 180</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        canvas {
+            border: 2px solid #000;
+            margin-top: 20px;
+        }
+        #denunciarBtn {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #denunciarBtn:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Denuncie Feminicídio</h1>
+    <canvas id="canvas" width="400" height="200"></canvas>
+    <br>
+    <button id="denunciarBtn">Disque 180</button>
+
+    <script>
+        // Configuração do Canvas
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Desenhar no canvas
+        function desenharCanvas() {
+            // Fundo
+            ctx.fillStyle = '#ffcccc';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Texto de alerta
+            ctx.fillStyle = '#000';
+            ctx.font = '20px Arial';
+            ctx.fillText('Denuncie o Feminicídio', 90, 50);
+
+            // Texto adicional
+            ctx.font = '16px Arial';
+            ctx.fillText('A cada 7 horas uma mulher é morta no Brasil.', 40, 100);
+            ctx.fillText('Não se cale. Disque 180.', 120, 150);
+        }
+
+        desenharCanvas();
+
+        // Função para o botão de denúncia
+        document.getElementById('denunciarBtn').addEventListener('click', function () {
+            window.location.href = 'tel:180'; // Funciona em dispositivos móveis
+        });
+    </script>
+</body>
+</html>
